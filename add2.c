@@ -10,12 +10,12 @@ int addThread(int* t, int bi, int bs){
 
 int add(int* t, int len){
 	
+	// section 1
 	int nbThreads = sqrt(len);
 	int resThreads[nbThreads]; int resMain = 0;
 	int step = len/nbThreads;
 	int i, pos = 0;
 	
-	// section 1
 	// spawning threads
 	// parallel for ( i = 0 ; i < nbThreads ; i++){
 	for ( i = 0 ; i < nbThreads ; i++){
@@ -25,7 +25,7 @@ int add(int* t, int len){
 	}
 	
 	// section 2
-	// main thread coup
+	// main thread computation
 	for ( i = pos ; i < len ; i++ ){
 		resMain += t[i];
 	}
